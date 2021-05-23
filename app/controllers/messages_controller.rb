@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
     def create
         @room = Room.find(params[:room_id])
-        @message = Meassage.new(message_params)
+        @message = Message.new(message_params)
         if user_signed_in?
             @message.is_user = true
         elsif owner_signed_in?

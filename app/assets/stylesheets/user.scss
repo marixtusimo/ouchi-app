@@ -1,0 +1,39 @@
+/* 大枠 */
+.card-container {
+    max-width: 600px;
+    padding: 40px 40px;
+    background-color: white;
+    margin: 0 auto;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    margin-top: 90px;
+  }
+  
+  .card-body {
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  /* 大枠 */
+
+  /* テキスト入力欄とテキスト入力欄の間の幅調整 */
+  .form-group {
+    margin-top: 40px;
+  }
+/* タイトルの調整 */
+  .card-title {
+      font-size: 30px;
+      font-family: 'Dancing Script', cursive;
+  }
+/* テキスト入力欄の幅調整 */
+  .form-control{
+      padding: 8px 80px 8px 10px;
+      text-align: left;
+      width: 300px;
+      font-family: 'Dancing Script', cursive;
+      font-size: large;
+  }
+  /* テキスト入力欄の幅調整 */

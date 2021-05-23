@@ -11,7 +11,7 @@ class RoomsController < ApplicationController
         redirect_to root_path    
       end
     elsif owner_signed_in?
-      if @room.shop.id == current_owner.id
+      if @room.owner.id == current_owner.id
         @user = @room.user
       else
         redirect_to root_path
