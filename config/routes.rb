@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   devise_for :owners
   devise_for :users
   resources :rooms, only: [:show, :create] do
-    resources :message, only: :create
+    resources :messages, only: :create
   end
 end

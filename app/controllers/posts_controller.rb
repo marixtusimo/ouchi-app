@@ -13,7 +13,7 @@ class PostsController < ApplicationController
       rooms = current_owner.rooms
       @user_ids = []
       rooms.each do |r|
-        @user_ids << r.user_ids
+        @user_ids << r.user_id
       end
     end
   end
