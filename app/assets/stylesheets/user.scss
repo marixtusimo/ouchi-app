@@ -37,3 +37,17 @@
       font-size: large;
   }
   /* テキスト入力欄の幅調整 */
+
+  /* ボタン */
+  .btn{
+    text-align: center;
+    width: 300px;
+    font-family: 'Dancing Script', cursive;
+    font-size: large;
+    margin-left: 18px;
+  }
+  
+  .btn:hover {
+    transform: rotate(-10deg);
+  }
+    /* ボタン */

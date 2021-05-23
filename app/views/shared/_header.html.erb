@@ -1,0 +1,52 @@
+   <header>
+      <h1>
+         <a href="/"><i class="material-icons">house</i>OuchiApp</a>
+      </h1>
+      <nav class="pc-nav">
+         <ul>
+         <% if user_signed_in? %>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Post It</a></li>
+            <li><a href="#">COMPANY</a></li>
+            <li><%= link_to 'Log Out(owner)', destroy_owner_session_path, method: :delete %></li>
+            <li><%= link_to 'Log Out(user)', destroy_user_session_path, method: :delete %></li>
+         <% else %>
+            <li><%= link_to "search", root_path %></li>
+            <li><%= link_to "Login(owner)", new_owner_session_path %></li>
+            <li><%= link_to "Login（user）", new_user_session_path %></li>
+            <li><%= link_to "SignIn(owner)", new_owner_registration_path %></li>
+            <li><%= link_to "SignIn（user）", new_user_registration_path %></li>
+         <% end %>
+         </ul>
+      </nav>
+      <nav class="sp-nav">
+         <ul>
+            <% if user_signed_in? %>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Post It</a></li>
+            <li><a href="#">COMPANY</a></li>
+            <li><%= link_to 'Log Out(owner)', destroy_owner_session_path, method: :delete %></li>
+            <li><%= link_to 'Log Out(user)', destroy_user_session_path, method: :delete %></li>
+         <% else %>
+            <li><%= link_to "search", root_path %></li>
+            <li><%= link_to "Login(owner)", new_owner_session_path %></li>
+            <li><%= link_to "Login（user）", new_user_session_path %></li>
+            <li><%= link_to "SignIn(owner)", new_owner_registration_path %></li>
+            <li><%= link_to "SignIn（user）", new_user_registration_path %></li>
+         <% end %>
+            <li class="close"><span>閉じる</span></li>
+         </ul>
+      </nav>
+      <div id="hamburger">
+         <span></span>
+      </div>
+   </header>
+   <div class="main-visual">
+      <h4 class="letter" data-letter="家">家</h4>
+      <h4 class="letter" data-letter="賃">賃</h4>
+      <h4 class="letter" data-letter="高">高</h4>
+      <h4 class="letter" data-letter="く">く</h4>
+      <h4 class="letter" data-letter="な">な</h4>
+      <h4 class="letter" data-letter="い">い</h4>
+      <h4 class="letter" data-letter="？">？</h4>
+   </div>
