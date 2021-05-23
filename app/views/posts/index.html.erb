@@ -1,0 +1,15 @@
+<h1>チャットサンプル</h1>
+<% if user_signed_in? %>
+  <%= current_user.name %>
+  <%= link_to "ログアウト", destroy_user_session_path ,:method => :delete %>
+<% elsif owner_signed_in? %>
+  <%= current_owner.name %>がログインしてます~
+  <%= link_to "ログアウト", destroy_owner_session_path ,:method => :delete %>
+<% else %>
+  <h3>ユーザー</h3>
+  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規登録", new_user_registration_path %>
+  <h3>ショップ</h3>
+  <%= link_to "ログイン", new_owner_session_path %>
+  <%= link_to "新規登録", new_owner_registration_path %>
+<% end %>
