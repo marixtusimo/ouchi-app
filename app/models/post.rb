@@ -9,4 +9,12 @@ class Post < ApplicationRecord
         validates :describe
         validates :image
     end
+
+    def self.search(search)
+        if search != ""
+            Post.where('station LIKE(?)', "%#{search}%")
+        else
+            Post.all
+        end
+    end
 end

@@ -7,10 +7,10 @@
          <% if owner_signed_in? %>
             <li><a href="#">Search</a></li>
             <li><%= link_to 'Post It', new_post_path %></li>
-            <li><%= link_to 'Log Out(owner)', destroy_owner_session_path, method: :delete %></li>
-            <li><%= link_to 'Log Out(user)', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'Log Out', destroy_owner_session_path, method: :delete %></li>
+         <% elsif user_signed_in? %>
+            <li><%= link_to "Log out", destroy_user_session_path ,:method => :delete %><li>
          <% else %>
-            <li><%= link_to "search", root_path %></li>
             <li><%= link_to "Login(owner)", new_owner_session_path %></li>
             <li><%= link_to "Login（user）", new_user_session_path %></li>
             <li><%= link_to "SignIn(owner)", new_owner_registration_path %></li>
@@ -20,14 +20,13 @@
       </nav>
       <nav class="sp-nav">
          <ul>
-            <% if user_signed_in? %>
+         <% if owner_signed_in? %>
             <li><a href="#">Search</a></li>
-            <li><a href="#">Post It</a></li>
-            <li><a href="#">COMPANY</a></li>
-            <li><%= link_to 'Log Out(owner)', destroy_owner_session_path, method: :delete %></li>
-            <li><%= link_to 'Log Out(user)', destroy_user_session_path, method: :delete %></li>
+            <li><%= link_to 'Post It', new_post_path %></li>
+            <li><%= link_to 'Log Out', destroy_owner_session_path, method: :delete %></li>
+         <% elsif user_signed_in? %>
+            <li><%= link_to "Log out", destroy_user_session_path ,:method => :delete %><li>
          <% else %>
-            <li><%= link_to "search", root_path %></li>
             <li><%= link_to "Login(owner)", new_owner_session_path %></li>
             <li><%= link_to "Login（user）", new_user_session_path %></li>
             <li><%= link_to "SignIn(owner)", new_owner_registration_path %></li>

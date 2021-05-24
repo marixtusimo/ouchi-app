@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     if user_signed_in?
       @owners = Owner.all
+      @owner = Owner.all
       rooms = current_user.rooms
       @owner_ids = []
       rooms.each do |r|
@@ -52,6 +53,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
+    @owner = Owner.all
   end
 
   
