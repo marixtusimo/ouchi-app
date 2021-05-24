@@ -4,7 +4,6 @@
       </h1>
       <nav class="pc-nav">
          <ul>
-<<<<<<< Updated upstream
          <% if owner_signed_in? %>
             <li><a href="#">Search</a></li>
             <li><%= link_to 'Post It', new_post_path %></li>
@@ -16,44 +15,7 @@
             <li><%= link_to "Login（user）", new_user_session_path %></li>
             <li><%= link_to "SignIn(owner)", new_owner_registration_path %></li>
             <li><%= link_to "SignIn（user）", new_user_registration_path %></li>
-=======
-         <% if user_signed_in? %>
-            <li><%= link_to "ログアウト", destroy_user_session_path ,:method => :delete %></li>
-            <% @owners.each do |owner| %>
-               <%= owner.name %>
-               <!-- もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成 -->
-               <% if @owner_ids.include?(owner.id) %>
-            <li><%= link_to "チャットへ", room_path(current_user.rooms.find_by(owner_id: owner.id)) %></li>
-            <% else %>
-                <%= form_for Room.new do |f| %>
-                  <%= f.hidden_field :owner_id, :value => owner.id %>
-                  <%= f.submit %>
-                <% end %>
-            <% end %>
          <% end %>
-         <% elsif owner_signed_in? %>
-            <li><%= link_to "ログアウト", destroy_owner_session_path ,:method => :delete %></li>
-            <br>
-            <% @users.each do |user| %>
-               <%= user.name %>
-               <!-- もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成 -->
-               <% if @user_ids.include?(user.id) %>
-                  <br>
-            <li><%= link_to "チャットへ", room_path(current_owner.rooms.find_by(user_id: user.id)) %></li>
-         <% else %>
-               <%= form_for Room.new do |f| %>
-               <%= f.hidden_field :user_id, :value => user.id %>
-               <%= f.submit %>
-               <% end %>
-            <% end %>
->>>>>>> Stashed changes
-         <% end %>
-      <% else %>
-         <li><%= link_to "ログイン(ユーザー)", new_user_session_path %></li>
-         <li><%= link_to "新規登録（ユーザー）", new_user_registration_path %></li>
-         <li><%= link_to "ログイン（オーナー）", new_owner_session_path %></li>
-         <li><%= link_to "新規登録（オーナー）, new_owner_registration_path %></li>
-      <% end %>
          </ul>
       </nav>
       <nav class="sp-nav">
@@ -87,6 +49,3 @@
       <h4 class="letter" data-letter="？">？</h4>
    </div>
    <div class="slide">Scroll</div>
-
-
-   
