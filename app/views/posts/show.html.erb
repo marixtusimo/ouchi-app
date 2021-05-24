@@ -7,6 +7,7 @@
           <%= link_to "物件の編集", edit_post_path(@post.id), method: :get, class: "item-red-btn" %>
           <p class="or-text">or</p>
           <%= link_to "削除", post_path(@post.id), method: :delete, class:"item-destroy" %>
+      <% else %>
       <% end %>
     <table class="detail-table">
       <tbody>
