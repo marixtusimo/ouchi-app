@@ -1,0 +1,60 @@
+<div class="items-sell-main">
+  <h2 class="items-sell-title">物件の情報を入力</h2>
+    <%= form_with model: @post, local: true do |f| %> 
+    <div class="img-upload">
+        <div class="weight-bold-text">
+            物件画像
+            <span class="indispensable">必須</span>
+        </div>
+        <div class="click-upload">
+            <p>
+            クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :image, id:"item-image" %>
+        </div>
+        </div> 
+        <div class="new-items">
+        <div class="weight-bold-text">
+            物件名
+            <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :title, class:"items-text", id:"item-name", placeholder:"例）〇〇マンション109号室", maxlength:"40" %>
+        <div class="items-explain">
+            <div class="weight-bold-text">
+            最寄り駅
+            <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :station, class:"items-text", id:"item-info", placeholder:"例）軽井沢駅" ,maxlength:"40" %>
+        </div>
+        <div class="items-explain">
+            <div class="weight-bold-text">
+            賃料
+            <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :price, class:"items-text", id:"item-info", placeholder:"例）30000" %>
+        </div>
+        <div class="items-explain">
+            <div class="weight-bold-text">
+            駅からの徒歩
+            <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :access, class:"items-text", id:"item-info", placeholder:"例）徒歩３分" %>
+        </div>
+        <div class="items-explain">
+            <div class="weight-bold-text">
+            物件詳細
+            <span class="indispensable">必須</span>
+            </div>
+            <%= f.text_area :describe, class:"items-text", id:"item-info", placeholder:"例）物件の特徴など" %>
+        </div>
+        <div class="sell-btn-contents">
+        <%= f.submit "変更する" ,class:"post-btn" %>
+        </div>
+        <div class="back-btn-contents">
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
+    <% end %>
+</div>
+
+
+
