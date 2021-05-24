@@ -7,7 +7,6 @@
          <% if owner_signed_in? %>
             <li><a href="#">Search</a></li>
             <li><%= link_to 'Post It', new_post_path %></li>
-            <li><a href="#">COMPANY</a></li>
             <li><%= link_to 'Log Out(owner)', destroy_owner_session_path, method: :delete %></li>
             <li><%= link_to 'Log Out(user)', destroy_user_session_path, method: :delete %></li>
          <% else %>
