@@ -1,7 +1,6 @@
 <%= render "shared/header" %>
 <div class='item-all'>
  <h2 class='title'>物件一覧</h2>
-<<<<<<< HEAD
  <div class="search">
       <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
         <%= form.text_field :keyword, placeholder: "最寄り駅で検索する", class: "search-input" %>
@@ -34,42 +33,16 @@
  </ul>
  </div>
  </div>
-=======
-   <div class='item-contents'>
-    <ul class='item-lists'>
-        <% @posts.each do |post| %>
-              <li class='list'>
-                <%= link_to post_path(post.id) do %>
-                <div class='item-img-content'>
-                  <%= image_tag post.image, class: "item-img" %>
-                </div>
-                <div class='item-info'>
-                  <h3 class='item-name'>
-                    <%= post.title %>
-                  </h3>
-                  <div class='item-price'>
-                    <span>家賃<%= post.price %>円<br><%= post.station %><br></span>
-                  </div>
-                </div>
-                <% end %>
-              </li>
-        <% end %> 
-    </ul>
-   </div>
-</div>
->>>>>>> master
 
+
+
+<h1>チャットサンプル</h1>
 <!--Userでログインしてたら-->
 <% if user_signed_in? %>
-<<<<<<< HEAD
   ~<%= current_user.name %>がログインしてます~
   <%= link_to "ログアウト", destroy_user_session_path ,:method => :delete %>
   <br>
   <h2>ログインしているオーナ一</h2>
-=======
-<h2>チャットする</h2>
-  <h2>ログインしているオーナ一覧</h2>
->>>>>>> master
   <br>
   <% @owners.each do |owner| %>
     <%= owner.name %>
@@ -103,5 +76,15 @@
         <%= f.submit %>
       <% end %>
     <% end %>
+
   <% end %>
+
+<!--ログインしてなかったら-->
+<% else %>
+  <h3>ユーザー</h3>
+  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規登録", new_user_registration_path %>
+  <h3>ショップ</h3>
+  <%= link_to "ログイン", new_owner_session_path %>
+  <%= link_to "新規登録", new_owner_registration_path %>
 <% end %>
