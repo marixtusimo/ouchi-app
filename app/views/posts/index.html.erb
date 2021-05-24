@@ -1,40 +1,34 @@
 <%= render "shared/header" %>
 <div class='item-all'>
  <h2 class='title'>物件一覧</h2>
- <div class='item-contents'>
- <ul class='item-lists'>
- <% @posts.each do |post| %>
- <li class='list'>
-        <%= link_to post_path(post.id) do %>
-        <div class='item-img-content'>
-          <%= image_tag post.image, class: "item-img" %>
-        </div>
-        <div class='item-info'>
-          <h3 class='item-name'>
-            <%= post.title %>
-          </h3>
-          <div class='item-price'>
-            <span>家賃<%= post.price %>円<br><%= post.station %></span>
-          </div>
-        </div>
-        <% end %>
-      </li>
- <% end %>
- </ul>
- </div>
- </div>
+   <div class='item-contents'>
+    <ul class='item-lists'>
+        <% @posts.each do |post| %>
+              <li class='list'>
+                <%= link_to post_path(post.id) do %>
+                <div class='item-img-content'>
+                  <%= image_tag post.image, class: "item-img" %>
+                </div>
+                <div class='item-info'>
+                  <h3 class='item-name'>
+                    <%= post.title %>
+                  </h3>
+                  <div class='item-price'>
+                    <span>家賃<%= post.price %>円<br><%= post.station %><br></span>
+                  </div>
+                </div>
+                <% end %>
+              </li>
+        <% end %> 
+    </ul>
+   </div>
+</div>
 
-
-
-<h1>チャットサンプル</h1>
 <!--Userでログインしてたら-->
 <% if user_signed_in? %>
-  ~<%= current_user.name %>がログインしてます~
-  <%= link_to "ログアウト", destroy_user_session_path ,:method => :delete %>
+<h2>チャットする</h2>
+  <h2>ログインしているオーナ一覧</h2>
   <br>
-  <h2>オーナ一覧</h2>
-  <br>
-
   <% @owners.each do |owner| %>
     <%= owner.name %>
     <!-- もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成 -->
@@ -67,15 +61,5 @@
         <%= f.submit %>
       <% end %>
     <% end %>
-
   <% end %>
-
-<!--ログインしてなかったら-->
-<% else %>
-  <h3>ユーザー</h3>
-  <%= link_to "ログイン", new_user_session_path %>
-  <%= link_to "新規登録", new_user_registration_path %>
-  <h3>ショップ</h3>
-  <%= link_to "ログイン", new_owner_session_path %>
-  <%= link_to "新規登録", new_owner_registration_path %>
 <% end %>
