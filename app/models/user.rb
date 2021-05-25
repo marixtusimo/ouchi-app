@@ -4,5 +4,5 @@ class User < ApplicationRecord
   has_many :rooms
   validates :name, presence: true
   validates :age, presence: true
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }#半角英数字混合
+  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i } # 半角英数字混合
 end

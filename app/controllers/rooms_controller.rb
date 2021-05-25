@@ -1,5 +1,4 @@
 class RoomsController < ApplicationController
-  
   def show
     @room = Room.find(params[:id])
     @message = Message.new
@@ -8,7 +7,7 @@ class RoomsController < ApplicationController
       if @room.user.id == current_user.id
         @owner = @room.owner
       else
-        redirect_to root_path    
+        redirect_to root_path
       end
     elsif owner_signed_in?
       if @room.owner.id == current_owner.id
@@ -33,13 +32,14 @@ class RoomsController < ApplicationController
     end
 
     if @room.save
-      redirect_to :action => "show", :id => @room.id
+      redirect_to action: 'show', id: @room.id
     else
       redirect_to root_path
     end
   end
 
   private
+
   def room_owner_params
     params.require(:room).permit(:owner_id)
   end

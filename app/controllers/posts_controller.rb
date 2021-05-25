@@ -61,7 +61,6 @@ class PostsController < ApplicationController
     @owner = Owner.all
   end
 
-  
   private
 
   def post_params
