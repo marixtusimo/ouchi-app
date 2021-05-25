@@ -16,6 +16,7 @@ class PostsController < ApplicationController
         @user_ids << r.user_id
       end
     end
+    @owner = Owner.all
     @posts = Post.all
   end
 

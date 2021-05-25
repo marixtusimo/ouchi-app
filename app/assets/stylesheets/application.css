@@ -13,10 +13,3 @@
  *= require_tree .
  *= require_self
  */
- .left-message{
-    text-align: left;
-  }
-  
-  .right-message{
-    text-align: right;
-  }

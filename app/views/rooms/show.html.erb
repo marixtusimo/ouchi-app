@@ -1,6 +1,8 @@
-<h1>チャットサンプル</h1>
+<div class='chat-box'>
+<div class='chat-content'>
+<h1>チャット画面</h1>
 <% if user_signed_in? %>
- <h3><% @owner.name %>とのチャットルーム</h3>
+ <div class="chat-main">
     <div class="chat-field">
       <% @messages.each do |m| %>
         <!-- メッセージがUserによるものだったら -->
@@ -19,7 +21,6 @@
       <% end %>
     </div>
     <% elsif owner_signed_in?%>
-  <h3><% @user.name %>とのチャットルーム</h3>
   <div class="chat-field">
     <% @messages.each do |m| %>
       <!-- メッセージがUserによるものだったら -->
@@ -37,9 +38,12 @@
       <% end %>
     <% end %>
   </div>
+  </div>
 <% end %>
-
+<div class='content-message'>
 <%= form_for [@room, @message] do |f| %>
   <%= f.text_field :content %>
   <%= f.submit "メッセージを送る"%>
 <% end %>
+</div>
+</div>
