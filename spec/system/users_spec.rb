@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe 'Users', type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
@@ -8,21 +8,21 @@ RSpec.describe "Users", type: :system do
   context 'ユーザー新規登録できるとき' do
     it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
       visit root_path
-      #トップページに遷移先があることを確認
+      # トップページに遷移先があることを確認
       expect(page).to have_content('SignIn（user）')
       visit new_user_registration_path
-      #新規登録ページへ移動
+      # 新規登録ページへ移動
       fill_in 'NickName', with: @user.name
       fill_in 'E-Mail', with: @user.email
       fill_in 'Password(半角英数混合)', with: @user.password
       fill_in 'Age', with: @user.age
-      #ユーザー情報を入力できることを確認
-      expect{
+      # ユーザー情報を入力できることを確認
+      expect  do
         find('input[type="submit"]').click
-      }.to change { User.count }.by(1)
-      #サインアップするとユーザーモデルカウントが１上がることを確認
+      end.to change { User.count }.by(1)
+      # サインアップするとユーザーモデルカウントが１上がることを確認
       expect(current_path).to eq(root_path)
-      #トップページに遷移することを確認
+      # トップページに遷移することを確認
     end
   end
 
@@ -35,9 +35,9 @@ RSpec.describe "Users", type: :system do
       fill_in 'E-Mail', with: ''
       fill_in 'Password(半角英数混合)', with: ''
       fill_in 'Age', with: ''
-      expect{
+      expect  do
         find('input[type="submit"]').click
-      }.to change { User.count }.by(0)
+      end.to change { User.count }.by(0)
       expect(current_path).to eq user_registration_path
     end
   end
