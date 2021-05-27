@@ -55,7 +55,7 @@
   
   /* スライドcss終わり */
 .item-all{
-  background-image: url('oushi.jpg');
+  background-color: black;
 }
 
 .title {
@@ -95,6 +95,7 @@
   .item-lists>.list {
  
     margin-left: 10px;
+    border: 3px solid white;
   }
   
   .item-img-content {
@@ -443,40 +444,22 @@
 .search-form .search-input {
   width: 30%;
   margin-right: 10px;
+  padding: 10px;
 }
 
 .search-form .search-btn {
   width: 10%;
-}
-form input,
-form textarea {
-  width: 100%;
-  margin: 5px 0 15px;
-  padding: 10px;
-  border: 1px solid #D8D8D8;
-  border-radius: 5px;
-  font-family: "游ゴシック", "YuGothic";
+  padding: 8px;
 }
 
-form input[type="submit"] {
-  background-color: #57C3E9;
-  border-radius: 20px;
-  color: #fff;
-  border: 0;
-  font-size: 18px;
-}
-
-form input[type="submit"]:hover {
-  background-color: #84d3ef;
-}
 
 .chat{
   color: #EFEFEF;
-  background-image: url(oushi.jpg);
+  background-color: black;
 }
 
 .snap {
-  background-image: url(house2.jpg);
+  background-color: black;
   color: #EFEFEF;
 }
 

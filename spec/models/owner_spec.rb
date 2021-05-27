@@ -16,12 +16,12 @@ RSpec.describe Owner, type: :model do
       it 'nameが空では登録できない' do
         @owner.name = ''
         @owner.valid?
-        expect(@owner.errors.full_message).to include("Name can't be blank")
+        expect(@owner.errors.full_messages).to include("Name can't be blank")
       end
       it 'emailが空では登録できない' do
         @owner.email = ''
         @owner.valid?
-        expect(@owner.errors.full_message).to include("Email can't be blank")
+        expect(@owner.errors.full_messages).to include("Email can't be blank")
       end
       it 'passwordが空では登録できない' do
         @owner.password = ''
@@ -65,6 +65,16 @@ RSpec.describe Owner, type: :model do
         @owner.email = 'hoge.com'
         @owner.valid?
         expect(@owner.errors.full_messages).to include('Email is invalid')
+      end
+      it '年齢が２０以下では登録できない' do
+        @owner.age = '19'
+        @owner.valid?
+        expect(@owner.errors.full_messages).to include('Age is not included in the list')
+      end
+      it '年齢が６０以上では登録できない' do
+        @owner.age = '61'
+        @owner.valid?
+        expect(@owner.errors.full_messages).to include('Age is not included in the list')
       end
     end
   end

@@ -16,11 +16,12 @@ RSpec.describe User, type: :model do
       it 'nameが空では登録できない' do
         @user.name = ''
         @user.valid?
-        expect(@user.errors.full_message).to include("Name can't be blank")
+        expect(@user.errors.full_messages).to include("Name can't be blank")
       end
       it 'emailが空では登録できない' do
         @user.email = ''
-        expect(@user.errors.full_message).to include("Email can't be blank")
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email can't be blank")
       end
       it 'passwordが空では登録できない' do
         @user.password = ''
@@ -64,6 +65,16 @@ RSpec.describe User, type: :model do
         @user.email = 'hoge.com'
         @user.valid?
         expect(@user.errors.full_messages).to include('Email is invalid')
+      end
+      it '年齢が２０以下では登録できない' do
+        @user.age = '19'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Age is not included in the list')
+      end
+      it '年齢が６０以上では登録できない' do
+        @user.age = '61'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Age is not included in the list')
       end
     end
   end

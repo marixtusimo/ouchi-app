@@ -42,8 +42,8 @@
 <% end %>
 <div class='content-message'>
 <%= form_for [@room, @message] do |f| %>
-  <%= f.text_field :content %>
-  <%= f.submit "メッセージを送る"%>
+  <%= f.text_field :content, class:'room-chat'%>
+  <%= f.submit "メッセージを送る", class:'room-message'%>
 <% end %>
 </div>
 </div>
