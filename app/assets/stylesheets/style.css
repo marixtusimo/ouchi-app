@@ -42,7 +42,7 @@ li {
    justify-content: center;
    align-items: center;
    height: 100vh;
-   background: url('house.jpg') top center / cover no-repeat;
+   background-color: black;
 }
 h2 {
    margin: 0;
