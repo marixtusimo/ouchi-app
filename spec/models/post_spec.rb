@@ -40,17 +40,17 @@ RSpec.describe Post, type: :model do
       it 'priceが全角では登録できない' do
         @post.price = '２０００００'
         @post.valid?
-        expect(@post.errors.full_messages).to include("Price is not included in the list")
+        expect(@post.errors.full_messages).to include('Price is not included in the list')
       end
       it 'priceが10000以下では登録できない' do
         @post.price = '9999'
         @post.valid?
-        expect(@post.errors.full_messages).to include("Price is not included in the list")
+        expect(@post.errors.full_messages).to include('Price is not included in the list')
       end
       it 'priceが9_999_999以上では登録できない' do
         @post.price = '99999999'
         @post.valid?
-        expect(@post.errors.full_messages).to include("Price is not included in the list")
+        expect(@post.errors.full_messages).to include('Price is not included in the list')
       end
     end
   end

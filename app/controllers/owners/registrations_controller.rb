@@ -61,8 +61,6 @@ class Owners::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   def ensure_normal_owner
-    if resource.email == 'guest2@example.com'
-      redirect_to root_path, alert: 'ゲストオーナーは削除できません。'
-    end
+    redirect_to root_path, alert: 'ゲストオーナーは削除できません。' if resource.email == 'guest2@example.com'
   end
 end

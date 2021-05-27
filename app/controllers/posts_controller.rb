@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:index, :search]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
   def index
     if user_signed_in?
       @owners = Owner.all
@@ -16,7 +20,6 @@ class PostsController < ApplicationController
         @user_ids << r.user_id
       end
     end
-    @owner = Owner.all
     @posts = Post.all
   end
 
@@ -34,15 +37,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
@@ -51,19 +51,31 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
   end
 
   def search
     @posts = Post.search(params[:keyword])
-    @owner = Owner.all
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :station, :price, :access, :describe, :image ).merge(owner_id: current_owner.id)
+    params.require(:post).permit(:title, :station, :price, :access, :describe, :image).merge(owner_id: current_owner.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def set_item
+    @owner = Owner.all
+  end
+
+  def move_to_index
+    if current_owner.id == @post.owner.id
+      redirect_to action: :index
+    end
   end
 end
