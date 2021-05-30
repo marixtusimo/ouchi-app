@@ -475,3 +475,15 @@
 .chat-text{
   font-size: 32px;
 }
+
+.footer{
+  margin:0;
+  background: white;
+  height:4em;
+  padding-top: 20px;
+  flex-flow: row wrap;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  color: black;
+  }
