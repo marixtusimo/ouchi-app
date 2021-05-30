@@ -28,7 +28,8 @@
          <% elsif user_signed_in? %>
             <li><%= link_to "Log out", destroy_user_session_path ,:method => :delete %><li>
          <% else %>
-            <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
+            <li><%= link_to 'ゲストユーザー', users_guest_sign_in_path, method: :post %></li>
+            <li><%= link_to 'ゲストオーナー', owners_guest_sign_in_path, method: :post %></li>
             <li><%= link_to "Login(owner)", new_owner_session_path %></li>
             <li><%= link_to "Login（user）", new_user_session_path %></li>
             <li><%= link_to "SignIn(owner)", new_owner_registration_path %></li>
