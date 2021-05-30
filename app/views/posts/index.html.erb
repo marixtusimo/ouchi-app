@@ -22,7 +22,7 @@
           <div class='item-price'>
             <span>家賃<%= post.price %>円<br><%= post.station %>
             <% @owner.find do |owner| %>
-            <br>投稿者<%= owner.name %>
+            <br>投稿者<%= post.owner.name %>
             <% end %>
             </span>
           </div>
