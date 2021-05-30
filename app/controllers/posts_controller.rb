@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
-
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :set_item, only: [:index, :search]
-  before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :authenticate_owner!, except: [:show, :index]#サインインしていなくても閲覧可能
+  before_action :set_post, only: [:show, :edit, :update, :destroy]#一緒のコードを一つにまとめる
+  before_action :set_item, only: [:index, :search]#一緒のコードを一つにまとめる
   def index
     if user_signed_in?
       @owners = Owner.all
@@ -40,6 +39,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path unless current_owner.id == @post.owner_id
   end
 
   def update
@@ -71,11 +71,5 @@ class PostsController < ApplicationController
 
   def set_item
     @owner = Owner.all
-  end
-
-  def move_to_index
-    if current_owner.id == @post.owner.id
-      redirect_to action: :index
-    end
   end
 end
