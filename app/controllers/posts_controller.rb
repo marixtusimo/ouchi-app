@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_owner!, except: [:show, :index]#サインインしていなくても閲覧可能
+  before_action :authenticate_owner!, except: [:show, :index, :search]#サインインしていなくても閲覧可能
   before_action :set_post, only: [:show, :edit, :update, :destroy]#一緒のコードを一つにまとめる
   before_action :set_item, only: [:index, :search]#一緒のコードを一つにまとめる
   def index
