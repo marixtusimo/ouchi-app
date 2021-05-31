@@ -12,7 +12,7 @@ CRUD機能（投稿、編集、削除）、物件検索機能、チャット機�
 heroku
 
 データベース：
-sequel-pro
+MySQL
 
 画像アップロード：
 acive_storage
