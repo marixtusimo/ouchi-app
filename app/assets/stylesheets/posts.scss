@@ -1,488 +1,488 @@
 
     /* スライドcss */
-.slide {
-    display: inline-block;
-    position: absolute;
-    right: 40px;
-    bottom: 0;
-    z-index: 2;
-    padding: 10px 10px 110px;
-    overflow: hidden;
-    color: white;
-    font-size: 14px;
-    font-family: 'Josefin Sans', sans-serif;
-    line-height: 1;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    writing-mode: vertical-lr;
-  }
-  .slide::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 1px;
-    height: 100px;
-    background: white;
-  }
-  
-  
-  .slide::after {
-    animation: sdl 1.5s cubic-bezier(1, 0, 0, 1) infinite;
-  }
-
-  @keyframes sdl {
-    0% {
-      transform: scale(1, 0);
-      transform-origin: 0 0;
+    .slide {
+        display: inline-block;
+        position: absolute;
+        right: 40px;
+        bottom: 0;
+        z-index: 2;
+        padding: 10px 10px 110px;
+        overflow: hidden;
+        color: white;
+        font-size: 14px;
+        font-family: 'Josefin Sans', sans-serif;
+        line-height: 1;
+        letter-spacing: .2em;
+        text-transform: uppercase;
+        text-decoration: none;
+        writing-mode: vertical-lr;
+      }
+      .slide::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 1px;
+        height: 100px;
+        background: white;
+      }
+      
+      
+      .slide::after {
+        animation: sdl 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+      }
+    
+      @keyframes sdl {
+        0% {
+          transform: scale(1, 0);
+          transform-origin: 0 0;
+        }
+        50% {
+          transform: scale(1, 1);
+          transform-origin: 0 0;
+        }
+        50.1% {
+          transform: scale(1, 1);
+          transform-origin: 0 100%;
+        }
+        100% {
+          transform: scale(1, 0);
+          transform-origin: 0 100%;
+        }
+      }
+    
+    
+      
+      /* スライドcss終わり */
+    .item-all{
+      background-color: black;
     }
-    50% {
-      transform: scale(1, 1);
-      transform-origin: 0 0;
+    
+    .title {
+      padding-top: 50px;
+      text-align: center;
     }
-    50.1% {
-      transform: scale(1, 1);
-      transform-origin: 0 100%;
+    
+      .item-contents {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        padding: 140px;
+      }
+      
+      .item-contents>.title {
+        font-size: 5vh;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+      
+      .item-contents>.subtitle {
+        font-size: 3vh;
+        margin: 1vh 0;
+        text-decoration: none;
+        color: #3ccace;
+        font-weight: bold;
+      }
+      
+      .item-lists {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+      }
+      
+      .item-lists>.list {
+     
+        margin-left: 10px;
+        border: 3px solid white;
+      }
+      
+      .item-img-content {
+        position: relative;
+      }
+      
+      .item-img {
+        height: 25vh;
+        width: 19vw;
+      }
+      
+      .item-img:hover{
+        transition-duration: .3s;
+        transform: scale(1.1);
+        opacity: .6;
+      }
+      /*index.html.erb*/
+    
+    
+      /*newhtml画面*/
+      .hoge {
+        display: flex;
+      }
+    
+    .items-sell-main {
+      max-width: 600px;
+      padding: 40px 40px;
+      background-color: white;
+      margin: 0 auto;
+      padding: 20px 25px 30px;
+      margin: 0 auto 25px;
+      margin-top: 50px;
+      box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     }
-    100% {
-      transform: scale(1, 0);
-      transform-origin: 0 100%;
+    
+    .items-sell-title {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
     }
-  }
-
-
-  
-  /* スライドcss終わり */
-.item-all{
-  background-color: black;
-}
-
-.title {
-  padding-top: 50px;
-  text-align: center;
-}
-
-  .item-contents {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 140px;
-  }
-  
-  .item-contents>.title {
-    font-size: 5vh;
-    line-height: 1.4;
-    font-weight: bold;
-  }
-  
-  .item-contents>.subtitle {
-    font-size: 3vh;
-    margin: 1vh 0;
-    text-decoration: none;
-    color: #3ccace;
-    font-weight: bold;
-  }
-  
-  .item-lists {
-    width: 100vw;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-  }
-  
-  .item-lists>.list {
- 
-    margin-left: 10px;
-    border: 3px solid white;
-  }
-  
-  .item-img-content {
-    position: relative;
-  }
-  
-  .item-img {
-    height: 25vh;
-    width: 19vw;
-  }
-  
-  .item-img:hover{
-    transition-duration: .3s;
-    transform: scale(1.1);
-    opacity: .6;
-  }
-  /*index.html.erb*/
-
-
-  /*newhtml画面*/
-  .hoge {
-    display: flex;
-  }
-
-.items-sell-main {
-  max-width: 600px;
-  padding: 40px 40px;
-  background-color: white;
-  margin: 0 auto;
-  padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 50px;
-  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-}
-
-.items-sell-title {
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.indispensable {
-  background: #ea352d;
-  margin-left: 8px;
-  padding: 3px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-
-.click-upload {
-  margin: 15px 0;
-  min-width: 250px;
-}
-
-.click-upload>p {
-  margin-bottom: 15px;
-}
-
-/* 商品名と商品説明 */
-.new-items {
-  padding: 2vh 0;
-}
-
-.items-text {
-  width: 100%;
-  padding: 16px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  resize: none;
-}
-
-.items-explain {
-  margin-top: 2vh;
-}
-
-/* /商品名と商品説明 */
-
-/* 商品の詳細など */
-.items-detail {
-  display: flex;
-  justify-content: space-between;
-  padding: 2vh 0;
-}
-
-.items-detail>.form {
-  width: 300px;
-  padding: 2vh 0;
-}
-
-.select-box {
-  margin: 2vh 0;
-}
-
-/* /商品の詳細など */
-
-/* 販売価格 */
-.sell-price {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.price-content {
-  width: 300px;
-  border-bottom: 1px solid #ccc;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.price-text {
-  /* min-width: 170px; */
-  display: flex;
-  align-items: center;
-}
-
-.sell-yen {
-  font-size: 18px;
-}
-
-.price-input {
-  height: 30px;
-  text-align: right;
-  padding-right: 10px;
-}
-
-/* /販売価格 */
-
-/* 注意書き */
-.caution {
-  padding: 5vh 0;
-}
-
-.sentence>a {
-  color: #0099e8;
-  text-decoration: none;
-}
-
-.sell-btn-contents{
-  text-align: center;
-}
-
-.post-btn{
-  font-size: 16px;
-  font-weight: bold;
-  padding: 13px 85px;
-  outline: 1px solid;
-  outline-color:#333;
-  outline-offset: 0px;
-  display: inline-block;
-  transition: .3s;
-  text-align: center;
-}
-
-.post-btn:hover{
-  animation: light .8s infinite;
-}
-
-@keyframes light {
-  100% { 
-    outline-color: transparent;
-    outline-offset: 12px;
-  }
-}
-.back-btn-contents{
-  text-align: center;
-  margin-top: 40px;
-}
-
-.back-btn {
-  font-size: 16px;
-  font-weight: bold;
-  padding: 13px 85px;
-  outline: 1px solid;
-  outline-color:#333;
-  outline-offset: 0px;
-  display: inline-block;
-  transition: .3s;
-  text-align: center;
-  color: black;
-  background-color: #EFEFEF;
-}
-
-.back-btn:hover {
-  animation: light .8s infinite;
-}
-
-/* show.html.erb */
-
-.item-show {
-  background-color: #f8f8f8;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.item-box {
-  background-color: #FFF;
-  width: 70vw;
-  min-width: 1200px;
-  padding: 10vh 15vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.item-box>.name {
-  text-align: center;
-  font-weight: bold;
-  font-size: 25px;
-}
-
-.item-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
-  object-fit: contain;
-}
-
-.item-price-box {
-  margin: 25px 0px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.item-price-box>.item-price {
-  font-size: 4vh;
-  font-weight: bold;
-}
-
-.item-price-box>.item-postage {
-  font-size: 16px;
-}
-
-
-.item-red-btn {
-  text-align: center;
-  background-color: lightgray;
-  font-weight: bold;
-  color:black;
-  margin: 10px 0px;
-  padding: 2vh 10vw;
-}
-
-.item-red-btn:hover{
-  transform: rotate(-10deg);
-}
-
-.or-text {
-  font-size: 20px;
-}
-
-.item-destroy {
-  background-color: lightgray;
-  text-align: center;
-  color: black;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
-}
-
-.item-destroy:hover{
-  transform: rotate(-10deg);
-}
-
-.item-explain-box {
-  font-size: 18px;
-  margin: 40px 0px;
-  overflow-wrap: anywhere;
-}
-
-.detail-table {
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-.detail-item {
-  width: 20%;
-  background-color: #eee;
-  border: 1px solid #dedede;
-  font-size: 14px;
-  text-align: center;
-}
-
-.detail-value {
-  width: 80%;
-  padding: 20px;
-  border: 1px solid #dedede;
-  font-size: 14px;
-}
-
-.option {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-}
-
-.favorite-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 20px;
-}
-
-.favorite-star-icon {
-  margin-right: 5px;
-}
-
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
-
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.report-flag-icon {
-  margin-right: 5px;
-}
-
-
-/* show.html.erb */
-
-.search-form {
-  text-align: center;
-  padding-top: 32px;
-}
-
-.search-form .search-input {
-  width: 30%;
-  margin-right: 10px;
-  padding: 10px;
-}
-
-.search-form .search-btn {
-  width: 10%;
-  padding: 8px;
-}
-
-
-.chat{
-  color: #EFEFEF;
-  background-color: black;
-}
-
-.snap {
-  background-color: black;
-  color: #EFEFEF;
-}
-
-.sub-title{
-    padding-top: 50px;
-    text-align: center;
-  }
-
-.sard-title{
-  margin-left: 15px;
-}
-
-.chat-text{
-  font-size: 32px;
-}
-
-.footer{
-  margin:0;
-  background: white;
-  height:4em;
-  padding-top: 20px;
-  flex-flow: row wrap;
-  display:flex;
-  justify-content:center;
-  width:100%;
-  color: black;
-  }
+    
+    .indispensable {
+      background: #ea352d;
+      margin-left: 8px;
+      padding: 3px;
+      border-radius: 2px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: bold;
+    }
+    
+    
+    .click-upload {
+      margin: 15px 0;
+      min-width: 250px;
+    }
+    
+    .click-upload>p {
+      margin-bottom: 15px;
+    }
+    
+    /* 商品名と商品説明 */
+    .new-items {
+      padding: 2vh 0;
+    }
+    
+    .items-text {
+      width: 100%;
+      padding: 16px 16px 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      resize: none;
+    }
+    
+    .items-explain {
+      margin-top: 2vh;
+    }
+    
+    /* /商品名と商品説明 */
+    
+    /* 商品の詳細など */
+    .items-detail {
+      display: flex;
+      justify-content: space-between;
+      padding: 2vh 0;
+    }
+    
+    .items-detail>.form {
+      width: 300px;
+      padding: 2vh 0;
+    }
+    
+    .select-box {
+      margin: 2vh 0;
+    }
+    
+    /* /商品の詳細など */
+    
+    /* 販売価格 */
+    .sell-price {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .price-content {
+      width: 300px;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .price-text {
+      /* min-width: 170px; */
+      display: flex;
+      align-items: center;
+    }
+    
+    .sell-yen {
+      font-size: 18px;
+    }
+    
+    .price-input {
+      height: 30px;
+      text-align: right;
+      padding-right: 10px;
+    }
+    
+    /* /販売価格 */
+    
+    /* 注意書き */
+    .caution {
+      padding: 5vh 0;
+    }
+    
+    .sentence>a {
+      color: #0099e8;
+      text-decoration: none;
+    }
+    
+    .sell-btn-contents{
+      text-align: center;
+    }
+    
+    .post-btn{
+      font-size: 16px;
+      font-weight: bold;
+      padding: 13px 85px;
+      outline: 1px solid;
+      outline-color:#333;
+      outline-offset: 0px;
+      display: inline-block;
+      transition: .3s;
+      text-align: center;
+    }
+    
+    .post-btn:hover{
+      animation: light .8s infinite;
+    }
+    
+    @keyframes light {
+      100% { 
+        outline-color: transparent;
+        outline-offset: 12px;
+      }
+    }
+    .back-btn-contents{
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .back-btn {
+      font-size: 16px;
+      font-weight: bold;
+      padding: 13px 85px;
+      outline: 1px solid;
+      outline-color:#333;
+      outline-offset: 0px;
+      display: inline-block;
+      transition: .3s;
+      text-align: center;
+      color: black;
+      background-color: #EFEFEF;
+    }
+    
+    .back-btn:hover {
+      animation: light .8s infinite;
+    }
+    
+    /* show.html.erb */
+    
+    .item-show {
+      background-color: #f8f8f8;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .item-box {
+      background-color: #FFF;
+      width: 70vw;
+      min-width: 1200px;
+      padding: 10vh 15vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .item-box>.name {
+      text-align: center;
+      font-weight: bold;
+      font-size: 25px;
+    }
+    
+    .item-box-img {
+      height: 50vh;
+      width: 60vw;
+      min-height: 500px;
+      object-fit: contain;
+    }
+    
+    .item-price-box {
+      margin: 25px 0px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    
+    .item-price-box>.item-price {
+      font-size: 4vh;
+      font-weight: bold;
+    }
+    
+    .item-price-box>.item-postage {
+      font-size: 16px;
+    }
+    
+    
+    .item-red-btn {
+      text-align: center;
+      background-color: lightgray;
+      font-weight: bold;
+      color:black;
+      margin: 10px 0px;
+      padding: 2vh 10vw;
+    }
+    
+    .item-red-btn:hover{
+      transform: rotate(-10deg);
+    }
+    
+    .or-text {
+      font-size: 20px;
+    }
+    
+    .item-destroy {
+      background-color: lightgray;
+      text-align: center;
+      color: black;
+      margin: 20px 0px;
+      padding: 2vh 10vw;
+    }
+    
+    .item-destroy:hover{
+      transform: rotate(-10deg);
+    }
+    
+    .item-explain-box {
+      font-size: 18px;
+      margin: 40px 0px;
+      overflow-wrap: anywhere;
+    }
+    
+    .detail-table {
+      margin-bottom: 30px;
+      width: 100%;
+    }
+    
+    .detail-item {
+      width: 20%;
+      background-color: #eee;
+      border: 1px solid #dedede;
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .detail-value {
+      width: 80%;
+      padding: 20px;
+      border: 1px solid #dedede;
+      font-size: 14px;
+    }
+    
+    .option {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    .favorite-btn {
+      border-radius: 40px;
+      width: 15vw;
+      min-width: 200px;
+      color: rgb(249, 75, 0);
+      border: 2px solid #ffb340;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+    }
+    
+    .favorite-star-icon {
+      margin-right: 5px;
+    }
+    
+    .report-btn {
+      border-radius: 40px;
+      width: 15vw;
+      min-width: 200px;
+    
+      padding: 1vh 0;
+      color: black;
+      border: 2px solid #2d2d2d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .report-flag-icon {
+      margin-right: 5px;
+    }
+    
+    
+    /* show.html.erb */
+    
+    .search-form {
+      text-align: center;
+      padding-top: 32px;
+    }
+    
+    .search-form .search-input {
+      width: 30%;
+      margin-right: 10px;
+      padding: 10px;
+    }
+    
+    .search-form .search-btn {
+      width: 10%;
+      padding: 8px;
+    }
+    
+    
+    .chat{
+      color: #EFEFEF;
+      background-color: black;
+    }
+    
+    .snap {
+      background-color: black;
+      color: #EFEFEF;
+    }
+    
+    .sub-title{
+        padding-top: 50px;
+        text-align: center;
+      }
+    
+    .sard-title{
+      margin-left: 15px;
+    }
+    
+    .chat-text{
+      font-size: 32px;
+    }
+    
+    .footer{
+      margin:0;
+      background: white;
+      height:4em;
+      padding-top: 20px;
+      flex-flow: row wrap;
+      display:flex;
+      justify-content:center;
+      width:100%;
+      color: black;
+      }
